@@ -1,5 +1,6 @@
 package me.rl24.propertymanager;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +14,10 @@ public class PropertyManager {
 
     public static <T extends Property> T getProperty(Class<T> cls) {
         return cls.cast(PROPERTY_MAP.get(cls));
+    }
+
+    public static Collection<Property> getProperties() {
+        return PROPERTY_MAP.values();
     }
 
 }
